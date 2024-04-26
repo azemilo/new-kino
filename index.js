@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Verileri almak için fetch kullan
+   
     fetch('https://api.themoviedb.org/3/search/movie?api_key=7e3d70e2d0fc85df0bfb0113024f1a15&query=Titanic')
       .then(response => response.json())
       .then(data => {
-        // JSON verilerinden film bilgilerini al
+        
         var results = data.results;
   
-        // Film listesini oluştur
+        
         var filmListesi = document.getElementById("film-listesi");
   
-        // Her film için HTML oluştur
+       
         results.forEach(function (result) {
           if (result.backdrop_path !== null) {
             var movieDiv = document.createElement("div");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       })
       .catch(error => {
-        console.error('Veri alınamadı: ', error);
+        console.error( error);
       });
   });
   
